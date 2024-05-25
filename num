@@ -1,0 +1,8 @@
+letters = {'a': 2, 'h': 4, 'f': 1, 't': 3, 'k': 6, 'l': 1}
+total_combinations = 1
+for count in letters.values():
+    total_combinations *= (count + 1)
+letter1 = sum(count + 1 for count in letters.values())
+letter2 = sum((count1 + 1) * (count2 + 1) for count1 in letters.values() for count2 in letters.values())
+letter3_or_more = total_combinations - (letter1 + letter2)
+print("Number of words with 3 or more letters:", letter3_or_more)
